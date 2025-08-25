@@ -1,6 +1,6 @@
 ﻿
-import Link from "next/link"
-import React from "react"
+import Link from "next/link";
+import React from "react";
 
 const navigation = [
     { name: "About Me", href: " " },
@@ -12,8 +12,19 @@ const navigation = [
 export default function Home() {
     return (
         <div>
-        <h1>DragonPort</h1>
-            <h2>Projects and Art, all in one!</h2>
+            <nav>
+                <ul>
+                {navigation.map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        className=""
+                    >
+                        {item.name}
+                    </Link>
+                ))}
+                </ul>
+            </nav>
         </div>
     )
 }
